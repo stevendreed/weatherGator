@@ -18,7 +18,7 @@ const getLonLat = async function(locationString, key = OWM_API_KEY)
     {
         let resp = await fetch(coordDataRoute+locationString
             +`&limit=5&appid=${key}`);
-        console.log(resp); // testing
+        console.log(resp.url); // testing
         return resp;
     } 
     catch(err)
