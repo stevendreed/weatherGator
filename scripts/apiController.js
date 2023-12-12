@@ -11,13 +11,20 @@ const weatherDataRoute = 'api.openweathermap.org/data/2.5/weather?';
 const coordDataRoute = 'http://api.openweathermap.org/geo/1.0/direct?q=';
 // {city name},{state code},{country code}&limit={limit}&appid={API key}
 /** END API routes **/
-const getLonLat = async function(locatObj, key = OWM_API_KEY)
+const getLonLat = async function(locationString, key = OWM_API_KEY)
 {
-    let response = await fetch(coordDataRoute+locatObj.city
-            +locatObj.state
-            +locatObj.county
-            +`&appid=${key}`);
-    console.log(response);
+    console.log(coordDataRoute+locationString+`&limit=5&appid=${key}`);
+    try
+    {
+        let resp = await fetch(coordDataRoute+locationString
+            +`&limit=5&appid=${key}`);
+        console.log(resp); // testing
+        return resp;
+    } 
+    catch(err)
+    {
+        return err;
+    }
 }
 
 // module.exports({ getLonLat });
