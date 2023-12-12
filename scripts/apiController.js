@@ -85,6 +85,7 @@ const getCurrWea = async function(llObj, key = OWM_API_KEY)
     } // end catch
 } // end getCurrWea
 
+// @TODO: follow https://openweathermap.org/forecast5 to modify into a 5 day forecast
 const getForecast = async function(cityStr)
 {
     let searchStr = strToPath(cityStr);
