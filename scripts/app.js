@@ -1,6 +1,6 @@
 // scripts/app.js
 
-const app = function()
+const app = async function()
 {
     console.log('app running on localbrowser'); // debugging
     // let testLonLat = getLonLat("denver,us,colorado");
@@ -8,7 +8,7 @@ const app = function()
 
     // getCurrWea({"lat":"39.7392364","lon":"-104.984862"});
 
-    getForecast('  san frANCISCo  ');
+    console.log(await getForecast('  san frANCISCo  '));
     
 }
 

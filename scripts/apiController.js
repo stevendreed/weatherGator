@@ -87,8 +87,21 @@ const getCurrWea = async function(llObj, key = OWM_API_KEY)
 
 const getForecast = async function(cityStr)
 {
-    let city_mod = strToPath(cityStr);
-    console.log(`city search = ${city_mod}`);
+    let searchStr = strToPath(cityStr);
+    console.log(`city search = ${searchStr}`);
+    let lonLat = await getLonLat(cityStr);
+    let weatherObj = await getCurrWea(lonLat[0]);
+
+    console.log(weatherObj);
+
+    return {
+        'name': weatherObj.name,
+        'clouds': weatherObj.clouds.all,
+        'tempK': weatherObj.main.temp,
+        'feelsLikeK': weatherObj.main.feels_like,
+        'wind': weatherObj.wind.speed,
+        'description': weatherObj.weather[0].description
+    }
 }
 
 // module.exports({ getLonLat });
