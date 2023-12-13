@@ -22,16 +22,55 @@
         rel="stylesheet"
         href="assets/css/style.css"
     />
-    <title>weatherGator</title>
+    <title>weatherGator Home</title>
 </head>
-<body>
-    <header>
-        this is the doc header
+<body
+    class="flex-container flex-direction-col">
+    <header
+        class="flex-container flex-navbar">
+        <img
+            id="navbar-logo">
+        </img>
+        <h1
+            id="app-title">
+            weatherGator
+        </h1>
+        <button>???</button>
     </header>
-    <div>
-        this is where the flexbox will be rendered
+    <div
+        class="flex-container flex-card">
+        <div
+            class="flex-container searchbar">
+            <button
+                class="ui-btn"
+                id="dropdown-chevron">
+            </button>
+            <form
+                id="search-form">
+                <!-- note: add eventlistener & prevent default -->
+                <input
+                    id="search-text"
+                    type="search"
+                    autocomplete="true"
+                    maxlength="50"
+                    placeholder="enter a city :&#41;"
+                    size="50">
+                    <!-- &#41; = ')' -->
+                </input>
+            </form>
+            <button
+                class="ui-btn"
+                id="search-glass">
+            </button>
+        </div>
+        <div>
+
+        </div>
+        <!-- <button></button> -->
+        </div>
     </div>
-    <footer>
+    <footer
+        class="flex-container flex-footer">
         this is where any additional footer material will be rendered
     </footer>
 </body>

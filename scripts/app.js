@@ -3,8 +3,10 @@
 const app = async function()
 {
     console.log('app running on localbrowser'); // debugging
-    
-    console.log(await getForecast('  san frANCISCo  '));
+    // create navbar
+    // $('header').$createNavbar();
+
+    // console.log(await getForecast('  san frANCISCo  '));
     
 }
 
